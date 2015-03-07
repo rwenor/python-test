@@ -154,7 +154,6 @@ for i in range(0, 2):
 
 # xmin, xmax = pl.xlim()   # return the current xlim
 # pl.xlim( (xmin - (xmax - xmin)/20.0 , xmax + (xmax - xmin)/20.0) )
-#
 # ymin, ymax = pl.ylim()   # return the current xlim
 #pl.ylim( (0 , 200) )
 
