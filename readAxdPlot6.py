@@ -162,6 +162,4 @@ for i in range(0, 2):
 # ymin, ymax = pl.ylim()   # return the current xlim
 #pl.ylim( (0 , 200) )
 
-
 pl.show()
-
