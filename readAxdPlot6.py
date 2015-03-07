@@ -138,10 +138,6 @@ for elem in array:
         data.append(de)
         #print "add", len(data)
   
-#pl.Figure()
-#thismanager = get_current_fig_manager()
-#thismanager.window.wm_geometry("500x500+890+300") #sets original size and position
-
 f, axarr = pl.subplots(2, 2)
 tid = getCol(data, 6)
 
