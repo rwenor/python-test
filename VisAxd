@@ -1,0 +1,5 @@
+#!/bin/sh
+~/Dropbox/python/readAxdPlot6.py $*&
+sleep 3
+
+ 
