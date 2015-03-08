@@ -58,12 +58,7 @@ with open(fileName, "r") as ins:
             print "Skip: ", line.strip().split()
         
         else:
-            #print i
             array.append(line.strip().split())
-            #print array[(i/2)-1]
-        
-
-#print array
 
 i = -1
 j = -1
