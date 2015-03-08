@@ -25,7 +25,7 @@ def getCol(d, col):
         d_id.append(row[col])
     #print d_id
     return d_id
-    
+
 # for arg in sys.argv:
 #     print arg
 
@@ -38,11 +38,11 @@ for arg in sys.argv:
     i = i + 1
     if i < 2:
         continue
-        
+    
     print i, " ", arg
-    if i == 2: 
+    if i == 2:
         fileName = arg
-    if i == 3: 
+    if i == 3:
         sensor = int(arg)
 
 
@@ -56,13 +56,13 @@ with open(fileName, "r") as ins:
             print "Head: ", line.strip().split()
         elif i == 2:
             print "Skip: ", line.strip().split()
-    
+        
         else:
             #print i
             array.append(line.strip().split())
-            #print array[(i/2)-1]    
+            #print array[(i/2)-1]
         
-        
+
 #print array
 
 i = -1
@@ -86,49 +86,50 @@ for elem in array:
               if j <> 4 and j <> 6 and j <> 7:
                    itm = float(itm)
                    de.append(itm)
-                   
+              
               if j == 6:
                    if datoStr <> itm:
                        day += 1
                        #print day, datoStr
                        datoStr = itm
-
+              
               if j == 7:
                    # itm = float(itm)
                    ts = 0.0
                    for et in itm.split(":"):
                        #print "*", et
                        ts = ts*60 + float(et)
-                       
-                   de.append(day + ts/3600.0/24)
                    
+                   de.append(day + ts/3600.0/24)
+              
               if j == 4:
                       #print itm
                       de.append(itm)
-              
-        except: 
+        
+        except:
             e = sys.exc_info()[0]
-            print "Error: %s" % e 
-            print "Fail:", itm           
+            print "Error: %s" % e
+            print "Fail:", itm
             pass
-     
-    #print "de:", len(de), de 
-    if len(de) == 7:          
+    
+    #print "de:", len(de), de
+    if len(de) == 7:
         data.append(de)
         #print "add", len(data)
-  
+
 f, axarr = pl.subplots(2, 2)
 tid = getCol(data, 6)
 
 sensor = -1
 for i in range(0, 2):
-	for j in range(0, 2):
-		sensor += 1
-		sigD = getCol(data, sensor) 
+  for j in range(0, 2):
+    sensor += 1
+    sigD = getCol(data, sensor)
 		
-		print i, j
-		axarr[i, j].hist2d(tid, sigD, bins=100)      
-		axarr[i, j].grid(color='y')
+    print i, j
+    axarr[i, j].set_title('Sens: %d:%d' % (i+1, j+1))
+    axarr[i, j].grid(color='y')
+    axarr[i, j].hist2d(tid, sigD, bins=100)
         #axarr[i, j].ylim( (0 , 200) )
 
 # xmin, xmax = pl.xlim()   # return the current xlim
