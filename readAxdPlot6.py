@@ -125,7 +125,7 @@ for i in range(0, 2):
     axarr[i, j].set_title('Sens: %d:%d' % (i+1, j+1))
     axarr[i, j].grid(color='y')
     axarr[i, j].hist2d(tid, sigD, bins=100)
-        #axarr[i, j].ylim( (0 , 200) )
+    #axarr[i, j].ylim( (0 , 200) )
 
 # xmin, xmax = pl.xlim()   # return the current xlim
 # pl.xlim( (xmin - (xmax - xmin)/20.0 , xmax + (xmax - xmin)/20.0) )
