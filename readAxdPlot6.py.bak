@@ -122,7 +122,7 @@ for i in range(0, 2):
     sigD = getCol(data, sensor)
 		
     print i, j
-    axarr[i, j].set_title('Sens: %d:%d' % (j+1, i+1))
+    axarr[i, j].set_title('Sens: %d:%d' % (i+1, j+1))
     axarr[i, j].grid(color='y')
     axarr[i, j].hist2d(tid, sigD, bins=100)
     #axarr[i, j].ylim( (0 , 200) )
