@@ -1,3 +1,4 @@
 *.axd
 *.zip
+*.bak
 ./.DS_Store
