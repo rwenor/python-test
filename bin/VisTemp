@@ -1,0 +1,3 @@
+#!/bin/sh
+cd ~/Python
+python ~/Python/VisTemp2.py&
