@@ -1,0 +1,2 @@
+cat /var/log/auth.log | grep 'sshd.*Invalid'
+cat /var/log/auth.log | grep 'sshd.*Failed'
