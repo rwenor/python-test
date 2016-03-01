@@ -16,7 +16,7 @@ def getData(d, id):
     for row in d:
         if row[7-1] == id:
             d_id.append(row)
-    print d_id
+    # print d_id
     return d_id
 
 def getCol(d, col):
@@ -31,8 +31,7 @@ def getCol(d, col):
 
 #fileName = "539_20150304-5d.axd"
 #fileName = "/Users/rolf/Dropbox/python/506_dato.axd"
-fileName = "506_dato.axd"
-#fileName = "test.axd"
+fileName = "test.axd"
 
 i = 0
 sensor = 1
@@ -60,7 +59,10 @@ with open(fileName, "r") as ins:
             print "Skip: ", line.strip().split()
         
         else:
+            #print line
             array.append(line.strip().split())
+
+
 
 print len(array)
 

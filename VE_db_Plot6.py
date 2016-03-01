@@ -16,7 +16,7 @@ def getData(d, id):
     for row in d:
         if row[7-1] == id:
             d_id.append(row)
-    print d_id
+    # print d_id
     return d_id
 
 def getCol(d, col):
@@ -31,10 +31,10 @@ def getCol(d, col):
 
 #fileName = "539_20150304-5d.axd"
 #fileName = "/Users/rolf/Dropbox/python/506_dato.axd"
-fileName = "506_dato.axd"
-#fileName = "test.axd"
+fileName = "test.axd"
 
 i = 0
+maxy = 4000
 sensor = 1
 for arg in sys.argv:
     i = i + 1
@@ -43,7 +43,7 @@ for arg in sys.argv:
     
     print i, " ", arg
     if i == 2:
-        fileName = arg
+        maxy = int(arg)
     if i == 3:
         sensor = int(arg)
 
@@ -60,7 +60,10 @@ with open(fileName, "r") as ins:
             print "Skip: ", line.strip().split()
         
         else:
+            #print line
             array.append(line.strip().split())
+
+
 
 print len(array)
 
@@ -117,7 +120,7 @@ for elem in array:
             print "Fail:", itm
             pass
     
-    #print "de:", len(de), de
+    # print "de:", len(de), de
     if len(de) >= 7:
     #if len(de) > 7 and ax_l > 900 and ax_l < 1100 :  # sykler
         data.append(de)
@@ -139,7 +142,7 @@ for i in range(0, 2):
     axarr[i, j].set_title('Sens: %d:%d (%d)' % (j+1, i+1, sensor+1))
     axarr[i, j].grid(color='y')
     axarr[i, j].hist2d(tid, sigD, bins=100)
-#    axarr[i, j].set_ylim([0 , 1000]) 
+    axarr[i, j].set_ylim([0 , maxy]) 
 
 # xmin, xmax = pl.xlim()   # return the current xlim
 # pl.xlim( (xmin - (xmax - xmin)/20.0 , xmax + (xmax - xmin)/20.0) )
